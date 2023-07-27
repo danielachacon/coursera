@@ -1,20 +1,32 @@
 let course = {
     "link" : window.location.href,
     "title" : document.querySelector('[data-e2e="hero-title"]').innerText,
-    "enrolledCount" : document.querySelector('[data-e2e="hero-module"]').childNodes[5].childNodes[0].childNodes[0].childNodes[0].innerText,
+    "ratingPercentage" : document.querySelector('[data-e2e="key-information"]').childNodes[0].childNodes[0].childNodes[0].childNodes[2].childNodes[0].childNodes[5].innerText, 
     "rating": document.querySelector('[data-track-component="reviews_module"]').childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[1].innerText,
     "ratingCount": document.querySelector('[data-track-component="reviews_module"]').childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[2].childNodes[0].childNodes[0].innerText,
-    "instructorRating": document.querySelector('[id="modules"]').childNodes[0].childNodes[0].childNodes[2].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[1].childNodes[0].childNodes[0].text,
+    "enrolledCount" : document.querySelector('[data-e2e="hero-module"]').childNodes[5].childNodes[0].childNodes[0].childNodes[0].innerText,
+    "recentViews": -1, //Find (Couldn't find)
     "instuctorRatingCount": document.querySelector('[id="modules"]').childNodes[0].childNodes[0].childNodes[2].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText,
+    "instructorRating": document.querySelector('[id="modules"]').childNodes[0].childNodes[0].childNodes[2].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[1].childNodes[0].innerText,
+    "reviewCount": -1, //Find
+    "reviewRating": -1, //Find
+    "aboutThisCourse": -1, //Find
+    "contentRating": -1, //Find
+    "contentRatingCount": -1, //Find
+    "syllabus": -1, //Find
+    "partners": [],
     "whatYouWillLearn": [],
     "skills": [],
-    "detailsToKnow": [],
-    "keyInformation": [],
-    "classContent": [],
-    "partners": [],
+    "productGlance": [], //Find
+    "instructors": [],
     "reviewStarPercentage": [],
-    "instructor": []
-
+    "enrollInformation": [], //Find
+    "learnerCareerOutcomes": [], //Find
+    
+    //Find? Or Map info to coursev1
+    "classContent": [],
+     "detailsToKnow": [],
+    "keyInformation": []
 }   
 
 for(var i = 0; i < document.querySelector('[id="about"]').childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes.length; i++)

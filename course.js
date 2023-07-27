@@ -18,7 +18,6 @@ let course = {
     "whatYouWillLearn" : [],
     "skills" : [],
     "productGlance" : [],
-    "partners" : [],
     "instructors" : [],
     "reviewStarPercentage" : [],
     "enrollInformation" : [],
