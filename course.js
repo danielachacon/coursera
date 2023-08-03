@@ -1,5 +1,7 @@
+const date = new Date();
 let course = {
     "link" : window.location.href,
+    "date" : date.toLocaleDateString(),
     "title" : document.querySelector("h1.banner-title").innerText,
     "ratingPercentage" : -1,
     "rating" : document.querySelector('[data-test="number-star-rating"]').childNodes[0].text,

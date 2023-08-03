@@ -1,5 +1,6 @@
 let course = {
     "link" : window.location.href,
+    "date" : date.toLocaleDateString(),
     "title" : document.querySelector('[data-e2e="hero-title"]').innerText,
     "ratingPercentage" : document.querySelector('[data-e2e="key-information"]').childNodes[0].childNodes[0].childNodes[0].childNodes[2].childNodes[0].childNodes[5].innerText, 
     "rating": document.querySelector('[data-track-component="reviews_module"]').childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[1].innerText,
