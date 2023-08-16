@@ -113,8 +113,7 @@ try{
     {
         videoInfo = []
         quizInfo = []
-        quizStats = []
-        videoStats = []
+        weeklyStats = []
         weeklyToDo = []
 
         //Clicks to open the Document
@@ -127,7 +126,15 @@ try{
         hoursToComplete = document.querySelector('[data-track-component="syllabus"]').childNodes[0].childNodes[i].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[2].innerText
         title = document.querySelector('[data-track-component="syllabus"]').childNodes[0].childNodes[i].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].innerText
         weekDescription = document.querySelector('[data-track-component="syllabus"]').childNodes[0].childNodes[i].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].innerText
-        
+       
+        //Amount of Quizzes/Tests/Readings/Videos and the expected time to finish each
+        for(j = 0; j < document.querySelector('[data-track-component="syllabus"]').childNodes[0].childNodes[i].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[2].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes.length; j++)
+        {
+            weeklyStats.push([document.querySelector('[data-track-component="syllabus"]').childNodes[0].childNodes[i].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[2].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[j].childNodes[0].childNodes[0].childNodes[0].childNodes[1].innerText, 
+            document.querySelector('[data-track-component="syllabus"]').childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[2].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[j].childNodes[0].childNodes[0].childNodes[2].innerText])
+        }
+
+        /*
         //Amount of Quizzes and length of expected time to finish
         quizStats.push([document.querySelector('[data-track-component="syllabus"]').childNodes[0].childNodes[i].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText,
                         document.querySelector('[data-track-component="syllabus"]').childNodes[0].childNodes[i].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[2].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[2].innerText])
@@ -135,7 +142,8 @@ try{
         //Amount of Videos and total watchtime
         videoStats.push([document.querySelector('[data-track-component="syllabus"]').childNodes[0].childNodes[i].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[1].childNodes[0].childNodes[1].innerText,
                         document.querySelector('[data-track-component="syllabus"]').childNodes[0].childNodes[i].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[2].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[2].innerText])
-
+        */
+       
         //video/quizInfo
         for(j = 0; j < document.querySelector('[data-track-component="syllabus"]').childNodes[0].childNodes[i].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[2].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes.length; j++)
         {
@@ -146,10 +154,9 @@ try{
             }
         }   
         }catch(e){}
-        week = [title, hoursToComplete, weekDescription, quizStats, videoStats, weeklyToDo]
+        week = [title, hoursToComplete, weekDescription, weeklyStats, weeklyToDo]
         course.syllabus.push(week)
         week = []
-
     }
 }catch(e){}
 
